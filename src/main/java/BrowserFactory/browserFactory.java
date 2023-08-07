@@ -21,7 +21,10 @@ public class browserFactory {
 	{
 		
 		if(browserName.contains("Chrome")) {
-			driver=new ChromeDriver();
+			ChromeOptions opt= new ChromeOptions();
+			opt.addArguments("--headless");
+			opt.addArguments("--no-sandbox");			
+			driver=new ChromeDriver(opt);
 		}
 		else if (browserName.contains("Firefox")) {
 			driver=new FirefoxDriver();
